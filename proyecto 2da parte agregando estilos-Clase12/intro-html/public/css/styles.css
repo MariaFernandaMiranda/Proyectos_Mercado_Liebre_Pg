@@ -1,0 +1,58 @@
+/*Mostrar como se vincula el archivo de estilos(css) con el doc html, el archivo css(sub carpeta) debe ir dentro de public '/public/css' y dentro   */
+/* el archivo que se puede llamar "styles.css"  y ahi empezamos a crear reglas de css, para vincular mi hoja de estilo al doc html tengo que hacer*/
+/* tengo que ir al doc html y utilizando la etiqueta link que es quien le otorga valores info a nuestro doc html, necesita ir dentro de head en cualquier */
+/* lugar, por ejemplo despues de title-----sigue en home.html*/
+/*selector de tipo etiqueta body { } */
+body {
+    /*background-color: salmon;(1) /*--color de fondo*/
+    /*font-family: sans-serif;   /*(2) agrego tipografia sans.serif*/
+    /*font-family: 'Comic Sans Ms'; /*(3)*/
+    /*font-family: sans-serif; /*(4)*/
+   font-family: 'Lato', sans-serif;
+
+}
+
+h1 {
+    /*font-family: serif; /*(5) */
+    font-size: 50px;/*(5)*/
+    font-weight: 300;/*(6)*/
+
+}    
+   
+
+h2{
+    font-size: 20px;
+}
+
+p {
+   font-size: 17px; 
+   line-height: 24px;
+}
+/*(1 css)entonces aca en donde nos comienza a surgir que debemos hacer, seguramente estemos orientados o nos orientemos más por hacer una regla cuyo selector sea de tipo clase(vamos al css) -->  */
+/* -->  y si bien no este del todo mal, existe otra solucion y es crear un selector descendente ...*/
+/* ¿cómo se ve un selector descendente? se ve de la siguiente manera: "p strong {}"  */
+/*Selector descendente, se leen de atras hacia adelante o sea le estamos asignando estilos a una etiqueta strong que se encuentra adentro de una etiqueta p  */
+p strong {
+     background-color: orange;  /*para que esta regla se cumpla y se aplique, el strong si o si necesita estar adentro de una etiqueta p   */
+     color: white;        /*color tipografico*/
+     font-style: italic; /*estilo de la tipografia*/
+}
+/*Pensemos que tiene una regla de estilo para todas las etiquetas "strong" que hace que un elemento con esta etiqueta se vea de color verde, va a implementar a algunos elementos del parrafo en el
+en el doc html */
+strong {
+    color: green;
+}
+/*Selectores de tipo clase necesitan que le demos un nombre y empiezan con un punto (.), qué pasa si quiero que x ejemplo 2 parrafos quiere que tengan distintos estilos   */ 
+.parrafo-destacado {
+    color: salmon;
+    font-size: 30px;
+    line-height: 38px;
+
+}
+.parrafo-destacado em {
+    color: red;
+    text-transform: uppercase;
+}
+
+
+

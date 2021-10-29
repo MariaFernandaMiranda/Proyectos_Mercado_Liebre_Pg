@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+body {
+   font-family: 'Lato', sans-serif;
+}
+.oculto {
+    display: none;
+}
+.contenedor01 { 
+    width: 70%;
+    max-width: 900px;/*nunca va a superar ese limite de maximo el contenedor*/
+    padding: 20px;
+    border: solid 5px black;
+    background-color: salmon; 
+    margin: auto; /*sirve para el contenedor se centre de manera horizontal*/
+}
+
+@media (min-width: 570px){/*Media queries*/
+    .contenedor01 { 
+        width: 90%;
+        padding: 20px;
+        border: solid 5px salmon;
+        background-color: #000000;
+        color: #ffffff; 
+        margin: auto; /*sirve para el contenedor se centre de manera horizontal*/
+    }
+  
+} /*dentro de los parentesis la condicion que yo deseo que se cumpla para que esta media-query se implemente*/
+/*dentro de las llaves voy a agrupar las reglas de estilo*/
+@media (min-width: 900px){
+    .contenedor01 { 
+       color: #ff0000;
+       
+    }
+    .oculto {
+        display: block;
+    }
+}
+/*
+    576
+    768
+    992
+    1200
+*/
+
+
+ 
+

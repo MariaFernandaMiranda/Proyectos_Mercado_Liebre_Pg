@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+body {
+   font-family: 'Lato', sans-serif;
+}
+.contenedor01,
+.contenedor02 {
+    padding: 20px;
+}
+
+.contenedor01{
+    width: 90%;
+   /* padding: 20px; podemos a su vez agruparlos porque comparten el padding de 20px*/
+    background-color: salmon;
+}
+.contenedor02{
+    width: 50%;
+   /* padding: 20px;*/
+    background-color:#b4fa72;
+}
+@media (min-width: 576px){ /*agrupando selectores, porque comparten propiedades o caracteristicas se separan con una coma( , )*/
+    .contenedor01,
+    .contenedor02 {
+        width: 70%;
+        margin: auto;/*alinea al centro*/
+    }
+}
+@media (min-width: 768px){ /*Ahora se pide que no comparte caracteristicas se separan los contenedores*/
+    .contenedor01 {
+        background-color: #000000;
+        color: #ffffff;
+    }
+    .contenedor02 {
+        background-color: #54ce1b;
+        color: #ff0000;
+    }
+}
+@media (min-width: 992px){ /*Ahora se pide que no comparte caracteristicas se separan los contenedores*/
+    .contenedor01,
+    .contenedor02 {
+        border: solid 10px yellow  ;
+    }
+}
+@media (min-width: 1200px){ /*Ahora se pide que no comparte caracteristicas se separan los contenedores*/
+    .contenedor01,
+    .contenedor02 {
+        max-width: 1100px;       
+    }
+}

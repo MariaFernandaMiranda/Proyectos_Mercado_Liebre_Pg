@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}/*selector universal *{ } */
+body {
+    
+   font-family: 'Lato', sans-serif;
+
+}
+.contenedor01 { /*si queremos trabajar en un sitio responsive debemos trabajar con tamaños porcentuales, ya esto es una medida relativa*/
+    width: 90%; /*cambiamos a porcentuales porque con pixeles no se adapta el viewport a lo ancho, porque se convierte en una medida relativa y no absoluta como antes de 700px*/
+    /*ocupando el 80% del contenedor que lo contiene, o sea este contenedor ocupa el 80% del body, el contenedor comienza a adaptarse*/
+    /*height: 400px;*/
+    /*¿que sucederia si le agrego un relleno de 20px con un padding? el elemento aumenta su tamaño*/
+    padding: 20px;  
+    /*ahora le agregamos un border*/ 
+    border: solid 5px black;
+    background-color: salmon; 
+    /*box-sizing: border-box; /*para que conserve el contenedor dentro del viewport, se lo usa en un selector general para que pueda ser usado por todos los elementos del html*/
+    
+}
+.contenedor02 {
+    width: 90vw; /* vw hace referencia a las medidas del ancho del viewport y no del contenedor padre*/
+    padding: 20px;  
+    border: solid 5px red;
+    background-color: green; 
+   
+    
+}
+
+

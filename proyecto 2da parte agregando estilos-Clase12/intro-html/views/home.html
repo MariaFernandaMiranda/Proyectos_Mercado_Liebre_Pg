@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi primer documento en HTML</title>
+   
+    <!-- ++se necesita especificar la ubicacion donde va a estar mi hoja de estilo, subcarpeta css y la hoja de estilo que necesitamos ('/css/styles.css')-->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> al momento no es necesaria, ya que vamos a usar la que acabamos de guardar en el archivo normalize.css, junto a la de google fonts que dejamos -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/styles.css"> <!--el atributo rel siempre es el mismo, porque se vincula la hoja de estilo y en el (href="")++ -->
+  </head>
+  <body>
+    <h4>Soy un h4</h4>
+
+    <h1>El título de nuestro documento</h1>
+
+    <!--<h2 class="parrafo-destacado">Un subtitulo cualquiera</h2> sirve para reutilizar el estilo de parrafo al h2, pero el nombre semanticamente no es conveniente-->
+    <h2>Un subtitulo cualquiera</h2>
+
+    <img src="/images/leia.jpg" alt="">
+    <strong>Otro texto en negrilla</strong><!--la img y el strong son elementos de linea y los elementos de linea comparten la misma fila, cosa que no pasa con los -->
+    <!--elementos de bloque, como los h, los parrafos y demás -->
+    <!--pensemos que yo quiero solamente el strong que se encuentra dentro del parrafo, tenga no solamente un color verde, sino que tenga otra caracteristica, quiero imaginarme -->
+    <!--que tenga un fondo por ejemplo naranja y que el texto sea verde, o que el texta sea cualquier otro texto blanco, vamos a pensarlo de esa manera (1 css) -->
+   
+    <p>
+      Lorem ipsum dolor <strong>esto es un texto en negrilla</strong> sit amet consectetur adipisicing elit. Consectetur esse
+      ad laboriosam eum <em>soy un texto en cursiva</em> cupiditate commodi dolores a, perspiciatis quis
+      explicabo ipsam nobis, omnis deserunt obcaecati, labore quasi quibusdam
+      harum beatae.
+    </p>
+
+    <p class="parrafo-destacado">
+      Lorem <em>soy un texto en cursiva</em> ipsum dolor sit, amet consectetur adipisicing elit. Vel molestias
+      officia tempora aperiam possimus expedita dolore excepturi quisquam eum
+      similique, debitis ullam reprehenderit consequatur facilis laborum quo,
+      quasi laboriosam molestiae?
+    </p>
+
+    <ol>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ol>
+
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+
+    <a href="https://wwww.google.com">Ir a Google</a>
+
+  </body>
+</html>
