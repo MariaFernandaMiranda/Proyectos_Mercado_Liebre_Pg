@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mercado Liebre</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+    />
+    <!--vinculacion de la tipografia googlefonts en este caso ROBOTO  -->
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <!--la vinculacion de la libreria normalize, que tambien esta guardada en la carpeta de archivos publicos-->
+    <link rel="stylesheet" href="/css/styles.css" />
+    <!--Y mi hoja de estilos styles.css, la cual esta vacia-->
+    <script
+      src="https://kit.fontawesome.com/c4eafb8b86.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--enlace que me permite vincular los iconos de fontawesome con mi doc html-->
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="main-header-top-bar">
+        <img src="/images/logo-mercado-liebre.svg" class="logo" />
+        <h2 class="copy-header">
+          <i class="fas fa-hand-holding-usd"></i>
+          Comprá en cuotas y sin tarjeta de crédito
+        </h2>
+      </div>
+      <a href="#" class="hamburguer-button">
+        <i class="fas fa-bars"></i>
+      </a>
+      <!-- <nav class="main-header-bottom-bar"> -->
+      <nav class="main-navbar">
+        <ul class="left-navbar">
+          <li><a href="#">Ofertas</a></li>
+          <li><a href="#">Tiendas Oficiales</a></li>
+          <li><a href="#">Vender</a></li>
+          <li><a href="#">Ayuda</a></li>
+        </ul>
+        <ul class="right-navbar">
+          <li><a href="#">Creá tu cuenta <i class="fas fa-credit-card"></i></a></li>
+          <li><a href="#">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
+          <li><a href="#">Mis compras <i class="fas fa-shopping-basket"></i></a></li>
+        </ul>
+      </nav>
+    </header>
+
+
+    <!-- Formulario -->
+    <form action="/crear-producto" method="POST">
+      <!-- es momento de crear los elementos visuales que vera el visitante de nuestra página  -->
+      <!-- Aca se comienza a generar aca etiquetas que me permitan agrupar cada uno de los elementos -->
+      <!-- pensemos que nuestro formulario va a tener un campo para el nombre del producto, precio del producto, para que la persona pueda elegir la categoria del producto, para que pueda elegir la ciudad del producto, y un campo adicional para poner los comentarios y las decripciones del producto-->
+      <!-- para cada uno de esos campos voy a poner un <div></div> que va a contener esos campos y utilizar las etiquetas que nos da html para crear elementos de formulario-->
+      <div>
+        <!-- la etiqueta label voy a quitar el atributo for=" " porque no lo necesito, basicamente es un texto que acompañara a cada uno de los campos del formulario -->
+        <!-- Es decir si yo voy a poner un formulario de creacion, donde la persona pueda crear un producto quizas me conviene poner "Nombre del producto" es simplemente un texto que se va a ver en el formulario, es un texto comun y corriente, pero si lo hacemos con la etiqueta label, estamos utlizando las etiquetase semanticasde una manera correcta  -->
+        <label>Nombre del producto:</label>
+        <!-- ¿como hacemos el campo en si? para generar el campo en donde el visante de la pagina pueda interactuar con la misma, se va a implementar la etiqueta input -->
+        <!-- ls etiqueta input necesita o tiene el atributo type, este define el tipo de elementos que nosotros queramos implementar  -->
+        <!-- por defecto el input es de type text (type="text") genera un elemento que se vera en el formulario como una caja donde se podra escribir x ejemplo el nombre del producto  -->
+        <!-- hay otros valores posibles dentro de este atributo type para la etiqueta input:  -->
+           <!--                                   - password: para generar un campo que tenga contraseñas o maneje contraseñas  (type="password"),   -->
+           <!--                                   - email: tambien podriamos trabajar un input de tipo email: si yo quiero que este campo pueda recibir un correo electronico  (type="email")  -->
+           <!--                                   - radio: y tengo dentro de otros la posibilidad de implementar un input de tipo radio, un botoncito circulito para seleccionar  (type="radio")   -->
+           <!--                                   - checkbox: o puedo generar un input de tipo checkbox  (type="checkbox") para que se vea asi un cuadrado para seleccionar    -->
+           <!-- (...(continua1)-leer despues, mas adelante-)algo que tiene mucha importancia en los campos de un  formulario no solo en los input es un atributo que le va a dar el nombre a cada uno de estos elementos, estamos hablando del atributo name="" este atributo es sumamente importante pues el mismo nos va a permitir despues cuando estemos enviando la info a nuestro backend  que cada campo pueda ser facilmente indentificado y que el backend pueda decir OK lo que la persona escribio en este campo va a para a nombre del producto, lo que la persona escribio en este campo va para el precio del producto y lo que la persona escribio en este campo va para en esta en oferta del producto  -->
+     <!-- es muy comun ponerle algo que referencie para que fue creado este input, por ejemplo yo le voy a poner  (name="nombre")...(continua2) -->
+        <input type="text" name="nombre"><!-- el atributo name no se visualiza, sirve para cuando yo envie la informacion  -->
+      </div>
+      <!-- adicionalmente Voy a generar otro campo con el precio del producto, tambien lo puedo dejar con el atributo type con el valor "text" (type="text"),podria implementar otro valor como lo puede ser el atributo number, el cual me va a permitir mostrar el elemento de otra manera similar, realmente no tiene mucha diferenciacion solo a nivel semantico,pero quizas en dispositivos moviles  este input de tipo number va a generar en dispositivos de tipo celular o tablet tengaan un par de flechitas que me permitan elegir un numero  (type="number") -->
+      <!-- Aca para ejemplo como trabajamos en un dispositivo de escritorio lo voy a dejar en input de type text  (type="text")   -->
+      <div>
+        <!-- ...(continua3)  Aca le voy a poner precio name="precio" -->
+        <label>Precio:</label>
+        <input type="text" name="precio">
+      </div>
+      <div>
+        <!-- Adicionalmente voy a implementar un input de tipo radio por ejemplo voy a decir "esta en oferta" y en este caso voy a poner un input de tipo radio  (type="radio") para que se vea como ese circulito, recordemos que el input de tipo radio es un boton que si yo lo elijo queda tildado (continua1)    -->
+         <!-- ...(continua3)  y aca en la atributo name le voy a poner enoferta name="enOferta   -->
+         <!-- Una caracteristica del atributo name no se visualiza, es decir no genera un texto como pasa con en el label  -->
+         <!-- el atributo name sirve para que cuando yo envie la info al backend pueda referenciar a qué lugar ira cada info que implementamos a traves de nuestros campos del formulario  -->
+         <!-- el atributo name no es solamente de la etiqueta input sino de todas aquellas etiquetas que implementemos dentro del formulario para que sea mas facil de referenciar cuando quieras trabajar directamente con esta info en tu backend    -->
+        <label>Está en oferta:</label>
+        <input type="radio" name="enOferta">
+      </div>
+    
+
+    </form>
+
+  </body>
+</html>

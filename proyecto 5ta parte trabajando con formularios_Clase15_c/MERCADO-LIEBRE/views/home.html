@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mercado Liebre</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" />
+  <!--vinculacion de la tipografia googlefonts en este caso ROBOTO  -->
+  <link rel="stylesheet" href="/css/normalize.css" />
+  <!--la vinculacion de la libreria normalize, que tambien esta guardada en la carpeta de archivos publicos-->
+  <link rel="stylesheet" href="/css/styles.css" />
+  <!--Y mi hoja de estilos styles.css, la cual esta vacia-->
+  <script src="https://kit.fontawesome.com/c4eafb8b86.js" crossorigin="anonymous"></script>
+  <!--enlace que me permite vincular los iconos de fontawesome con mi doc html-->
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="main-header-top-bar">
+      <img src="/images/logo-mercado-liebre.svg" class="logo" />
+      <h2 class="copy-header">
+        <i class="fas fa-hand-holding-usd"></i>
+        Comprá en cuotas y sin tarjeta de crédito
+      </h2>
+    </div>
+    <a href="#" class="hamburguer-button">
+      <i class="fas fa-bars"></i>
+    </a>
+    <!-- <nav class="main-header-bottom-bar"> -->
+    <nav class="main-navbar">
+      <ul class="left-navbar">
+        <li><a href="#">Ofertas</a></li>
+        <li><a href="#">Tiendas Oficiales</a></li>
+        <li><a href="#">Vender</a></li>
+        <li><a href="#">Ayuda</a></li>
+      </ul>
+      <ul class="right-navbar">
+        <li><a href="#">Creá tu cuenta <i class="fas fa-credit-card"></i></a></li>
+        <li><a href="#">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
+        <li><a href="#">Mis compras <i class="fas fa-shopping-basket"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- Formulario -->
+  <form action="/crear-producto" method="POST">
+<!-- Vamos a generar campos que se despliegan, y te muestran la ciudad para elijas dentro de ese formulario o por ejemplo te muestran la fecha de nacimiento   -->
+    <div>
+      <label>Nombre del producto:</label>
+      <input type="text" name="nombre">
+    </div>
+    <div>
+      <label>Precio:</label>
+      <input type="text" name="precio">
+    </div>
+    <!-- Para ello vamos a ser un div, se me ocurre preguntar la categoria de este elemento   -->
+    <!-- lo primero que voy a poner una etiqueta <label></label> que diga categoria  -->
+    <!--  para que yo pueda generar este tipo de elemento que se conoce como una lista desplegable o un combobox, voy a utilizar la etiqueta <select></select>  -->
+    <!-- la etiqueta select basicamente genera ese tipo de implemento, aca voy a borrar ese atributo que no me interesa (id="") y fijense como automaticamnte VScode me atribuye el atributo name=""-->
+    <!-- entonces voy a ponerle categoria, para que no se me olvide para qué fue creado este campo, ahora bien el solo hecho de implementar esto me va a dejar con un campo de esta manera, fijate que no veo nada mas que una pequeña fecha en un cuadrado -->
+    <!-- ¿que pasa con esto? las etiquetas select lo que hacen o para lo que sirven es para agrupar opciones, para agrupar muchas opciones dentro de un solo campo -->
+    <!--  entonces de esta manera podria a comenzar a generar opciones ¿como se generan esas opciones?   -->
+    <!-- las opciones dentro de un select se generan a traves de la etiqueta <option></option> y la etiqueta opcion me va a permitir mostrarle algo a la persona   -->
+    <div>
+      <label>Categoría:</label>
+      <select name="categoria">
+        <!-- por ejemplo en este caso digo "Hogar" -->
+       <!--  (....continua1) Ahora ¿qué pasa? el valor que vemos aca (value="") con el atributo value es un atributo bastante importante¡por que?  -->
+       <!-- (....continua1)porque cuando nosotros tenemos este tipo de implemento este elemento un select con option, este elemento select es un campo que no permite la insercion de datos de parte del visitante -->
+       <!-- (....continua1)el select es un elemento que me permite elegir una opcion, no me permite nada mas no me permite escribir, entonces si lo que yo quiero es referenciar en mi backend ¿cual fue la categoria que eligio la persona? podria ponerle un value=""  -->
+       <!-- (....continua1)podria practicamente o realmente ponerle un value, podria ponerle value="cat1", cat="cat2" y cat="cat3" -->
+       <!-- (....continua1)porque en mi backend esto va a ser sentido, xq yo voy a poder identificar que la categoria 1 es Hogar,que la categoria 2 es electro y la categoria 3 es indumetaria   -->
+       <!-- (....continua1)sin embargo no es una practica muy habitual, porque tiende a confundir y por eso se estila a poner el mismo valor de la opcion en minuscula HOGAR value="hogar" -->
+       <!-- (....continua1)recordemos el value="" es el que se envia al backend, mientras lo que esta dentro de las etiquetas <option>Hogar</option> es lo que se muestra al visitante  -->
+       <!-- (....continua1) observemos como en este caso visualmente nada cambia y podria ir agregando mas y mas categorias y todas ellas van a quedar agrupadas en un solo elemento   -->
+        <option value="hogar">Hogar</option>
+        <!-- Voy a poner otra categoria que sea "Electro" -->
+        <option value="electro">Electro</option>
+        <!-- Y voy a poner otra categoria que sea "Indumentaria" -->
+        <!-- esta claro y podemos entender que estos option en algun momento vendran desde nuestra base de datos, para hacer esto mas dinamico (....continua1)  -->
+        <option value="indumentaria">Indumentaria</option>
+      </select>  
+    </div>
+    <div>
+       <!-- (....continua1) por ejemplo se me ocurre adicionar otro adicional que sea ¿a que ciudad pertenece este producto? -->
+      <label>Ciudad:</label>
+       <!-- (....continua1)aca le cambio el name=ciudad  -->
+        <select name="ciudad">
+          <!-- (....continua1)y vamos a poner ejemplo Buenos Aires en la option, Rosario y Mendoza -->
+          <!-- (....continua1)en este caso en el value, bien podria poner las iniciales de las ciudades, ba, ro y me (value="ba") -->
+          <!-- (....continua1)o podria poner la abreviacion tecnica que tomemos o la abreviacion tecnica de estas ciudades lo importante  del value es que lo que escribas en el value tenga sentido en tu backend para que sea facilmente identificable -->
+          <!-- (....continua1)en este caso podria decir que si pongo aca baires esto sigifica que es de Buenos Aires value="baires", value="ros" Rosario respectivamente, y value="mdz" lo mismo para su correspondiente Mendoza -->
+          <!-- (....continua1) estoy tomando valores aleatorios, pero quiero que te des cuenta que basicamente el value es sobretodo muy importante en nuestro backend xq a la vista del visitante, lo que el visitante ve es lo que escribamos adentro de las etiquetas option   -->
+
+          <option value="baires">Buenos Aires</option>
+          <option value="ros">Rosario</option>
+          <option value="mdz">Mendoza</option>
+        </select>
+      
+    </div>
+    <div>
+      <label>Está en oferta:</label>
+      <input type="radio" name="enOferta">
+    </div>
+
+
+
+  </form>
+
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mercado Liebre</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" />
+  <!--vinculacion de la tipografia googlefonts en este caso ROBOTO  -->
+  <link rel="stylesheet" href="/css/normalize.css" />
+  <!--la vinculacion de la libreria normalize, que tambien esta guardada en la carpeta de archivos publicos-->
+  <link rel="stylesheet" href="/css/styles.css" />
+  <!--Y mi hoja de estilos styles.css, la cual esta vacia-->
+  <script src="https://kit.fontawesome.com/c4eafb8b86.js" crossorigin="anonymous"></script>
+  <!--enlace que me permite vincular los iconos de fontawesome con mi doc html-->
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="main-header-top-bar">
+      <img src="/images/logo-mercado-liebre.svg" class="logo" />
+      <h2 class="copy-header">
+        <i class="fas fa-hand-holding-usd"></i>
+        Comprá en cuotas y sin tarjeta de crédito
+      </h2>
+    </div>
+    <a href="#" class="hamburguer-button">
+      <i class="fas fa-bars"></i>
+    </a>
+    <!-- <nav class="main-header-bottom-bar"> -->
+    <nav class="main-navbar">
+      <ul class="left-navbar">
+        <li><a href="#">Ofertas</a></li>
+        <li><a href="#">Tiendas Oficiales</a></li>
+        <li><a href="#">Vender</a></li>
+        <li><a href="#">Ayuda</a></li>
+      </ul>
+      <ul class="right-navbar">
+        <li><a href="#">Creá tu cuenta <i class="fas fa-credit-card"></i></a></li>
+        <li><a href="#">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
+        <li><a href="#">Mis compras <i class="fas fa-shopping-basket"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- Formulario -->
+       <!-- (--Inicio4 le vamos a poner un class al formulario como el siguiente class="create-form") y voy a darle un poco de estilo, vamos a la hoja de estilo style.css y voy a poner .create-->
+
+  <form action="/crear-producto" method="POST" class="create-form">
+    
+    <div class="control-formulario">
+      <label>Nombre del producto:</label>
+      <input type="text" name="nombre" class="control">
+    </div>
+    <div class="control-formulario" >
+       <!-- (--inicio3)Algo que podriamos hacer a traves del formulario es poner algunos textos que nos permitan darles ayudas a la personas x ejemplo e que el precio podria ser de un formato determinado(--continua3) -->
+       <!-- (--continua3) para ello voy a utilizar un atributo que se conoce como placeholder=""permite generar un valor de ayuda, si yo pongo aca placeholder="123.56" el placeholder lo que hace es mostrar este tipo de texto, que bien cuando se empiece a eascribir se va a empezar a borrar -->
+       <!-- (--continua3) el placeholder es bastante bueno porque nos va a permitir hacer este tipo de implementacion -->
+
+       
+
+      <label>Precio:</label>
+      <input type="text" name="precio" placeholder="123.56" class="control">
+    </div>
+
+    <div class="control-formulario">
+      <label>Categoría:</label>
+      <select name="categoria" class="control">     
+        <option value="hogar">Hogar</option>       
+        <option value="electro">Electro</option>       
+        <option value="indumentaria">Indumentaria</option>
+      </select>  
+    </div>
+    <div class="control-formulario">       
+      <label>Ciudad:</label>      
+        <select name="ciudad" class="control">
+          <option value="baires">Buenos Aires</option>
+          <option value="ros">Rosario</option>
+          <option value="mdz">Mendoza</option>
+        </select>      
+    </div>
+    <!-- (--continua1)perfecto con esto ya tengo algo mejor de esta manera visualmente,(--continua2)  -->    
+    <div class="control-formulario">
+      <label>Descripcion:</label>
+      <textarea name="descripcion" class="control"></textarea>
+    </div>
+    <div class="control-formulario">
+      <label>Está en oferta:</label>
+      <input type="radio" name="enOferta">
+    </div>
+    <!-- (--continua2)y me queda por generar el boton de envio, el boton de envio se hacer generalmente a traves de la etiqueta <button></button>y me permite como te daras cuenta escribir un texto, en este caso Guardar -->
+    <!-- (--continua2) algo particular de la etiqueta button es que utiliza un atributo type="" el atributo type permite varios valores(button, menu,reset,submit, etc), pero me interesa -->
+     <!-- (--continua2) me interesa el atributo submit que serviria para guardar el formulario, para enviar el formulario al atributo Action=""donde diga el atributo action="/crear-productos",  -->
+    <button type="reset" class="boton-formulario">Enviar</button>
+     <!-- (--continua2) y por otro lado pódria implementar un boton por qué no es usual, que sea borrar con valor "reset" en el type type="reset"-->
+     <!-- (--continia2) Borrar no es borrar de la base de datos, borrar es borrar lo que haya escrito, escribo en todos los campos y voy a borrar, automaticamente el formulario se resetea   -->
+     <!-- (--continua2) fijate si voy al boton "Guardar" y doy click con lo que acabo de escribir en el formulario se va la ruta action="/crear-producto" aun no puede ir a crear producto en nuestra visual -->
+     <!-- (--continua2) porque mi servidor no tiene esa ruta, que lo vamos a ser mas adelante(fin continua2)  -->
+    <button type="submit" class="boton-formulario">Borrar</button>
+    <!-- Ahora solo nos faltan los campos de los comentarios y el boton enviar -->
+    <!-- para implementar un campo de comentario dentro del formulario con un <div></div>, basicamente implementemos una etiqueta que se llama text-area que viene con una serie de caracteristicas o atributos que los podemos quitar-->
+    <!-- id="" cols="30" rows="10" -->
+    <!-- aca en el atributo name="", tambien necesito referenciar de qué es esto y le ponemos descripcion del producto, obviamente necesito tambien implementar la etiqueta <label></label>en donde referencia que esto va a ser descripcion del producto  -->
+    <!-- recordemos que la etiqueta label acompaña al campo, con esto estaria obteniendo algo asi, obviamente mas adelante le voy a dar un poco mas de estilo, y esto deberia estar antes del boton que Esta en oferta (--continua1)-->
+    
+
+
+
+  </form>
+
+</body>
+
+</html>
